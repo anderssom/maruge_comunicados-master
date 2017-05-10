@@ -16,7 +16,7 @@ public class postagens extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postagens);
-        ListView listView = (ListView) findViewById(R.id.listView);
+        ListView listView = (ListView) findViewById(R.id.lista);
         MessagemDAO messagemDAO = new MessagemDAO(this);
         List<Messagem> messagems = new ArrayList<>();
         if (messagemDAO.listar()!=null){

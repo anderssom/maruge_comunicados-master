@@ -4,10 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-public class MainActivity extends AppCompatActivity {
+
+import br.com.maruge.maruge_comunicados.model.MeuAdaptador;
+
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
+
     Button btnLogar;
     TextView txtNovoUsuario;
     TextView nomeUsuario,senhaUsuario;
@@ -19,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
         txtNovoUsuario = (TextView)findViewById(R.id.txtNovoUsuario);
         nomeUsuario = (TextView) findViewById(R.id.UsuarioLogin);
         senhaUsuario = (TextView) findViewById(R.id.SenhaLogin);
+
+
+          ListView listView = (ListView) findViewById(R.id.lista);
+        listView.setAdapter(new MeuAdaptador(this));
+        listView.setOnItemClickListener(this);
+
+
 
 
         // Verificando usuarios
